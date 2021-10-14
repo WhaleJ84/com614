@@ -1,0 +1,19 @@
+{
+  "id": "urn:ngsi-ld:SeaPort:Southampton-001",
+  "type": "SeaPort",
+    "typeOfPort": [
+    "marina",
+    "merchandise",
+    "cruise",
+    "ferry",
+    "yatching"
+  ],
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      50.909704,
+      -1.435713
+    ]
+  },
+  "dateLastReported": "2021-10-14T08:45:00Z"
+}

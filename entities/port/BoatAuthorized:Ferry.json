@@ -1,0 +1,15 @@
+{
+  "id": "urn:ngsi-ld:BoatAuthorized:Ferry-001",
+  "type": "BoatAuthorized",
+  "refSeaPort": "urn:ngsi-ld:SeaPort:Southampton-001",
+  "boatType": "passenger",
+  "boatSubType": "ferry",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      23,
+      45
+    ]
+  },
+  "dateLastReported": "2021-10-14T23:59:59"
+}
