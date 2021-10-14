@@ -1,0 +1,18 @@
+{
+  "id": "urn:ngsi-ld:Station:FerryTerminal:1",
+  "name": "Red Funnel Terminal 1",
+  "type": "TransportStation",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      50.896182982117274,
+      -1.4052251025225824
+    ]
+  },
+  "dateLastReported": "2021-10-14T08:45:00Z",
+  "dateObserved": "2021-10-14T08:45:00Z",
+  "stationType": [
+    "ferry"
+  ],
+  "locationType": 1
+}
