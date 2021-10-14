@@ -19,3 +19,7 @@ We can use [arrivalTime](https://schema.org/BoatTrip) attribute specified for Bo
 ## Station:BusStop
 
 A bus stop right by the ferry station.
+
+## Station:FerryTerminal
+
+A ferry terminal for the ferry to dock at.
