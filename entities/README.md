@@ -15,3 +15,7 @@ This seaport will be loosely based around the Port of Southampton.
 
 A non-existent ferry that will be used as a dummy to manipulate the ETA values.
 We can use [arrivalTime](https://schema.org/BoatTrip) attribute specified for BoatTrip schemas.
+
+## Station:BusStop
+
+A bus stop right by the ferry station.

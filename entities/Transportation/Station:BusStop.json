@@ -1,0 +1,17 @@
+{
+  "id": "urn:ngsi-ld:Station:Southampton-001",
+  "type": "TransportStation",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      50.89616791081328,
+      -1.4048887338183156
+    ]
+  },
+  "dateLastReported": "2021-10-14T08:45:00Z",
+  "dateObserved": "2021-10-14T08:45:00Z",
+  "stationType": [
+    "bus"
+  ],
+  "locationType": 0
+}
