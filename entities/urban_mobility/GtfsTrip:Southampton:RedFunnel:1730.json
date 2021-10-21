@@ -1,0 +1,8 @@
+{
+  "id": "urn:ngsi-ld:GtfsTrip:Southampton:RedFunnel:1730",
+  "type": "GtfsTrip",
+  "hasService": "urn:ngsi-ld:Service:Southampton:RedFunnel",
+  "headSign": "Southampton T1",
+  "direction": 1,
+  "hasRoute": "urn:ngsi-ld:GtfsRoute:Southampton:IOW:T1"
+}
