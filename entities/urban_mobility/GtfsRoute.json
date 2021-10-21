@@ -1,0 +1,7 @@
+{
+  "id": "urn:ngsi-ld:GtfsRoute:Southampton:IOW:T1",
+  "type": "GtfsRoute",
+  "name": "Isle of Wight Ferry",
+  "routeType": "4",
+  "operatedBy": "urn:ngsi-ld:GtfsAgency:RedFunnelFerries"
+}
