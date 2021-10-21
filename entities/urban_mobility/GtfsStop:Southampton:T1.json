@@ -1,0 +1,14 @@
+{
+  "id": "urn:ngsi-ld:GtfsStop:Southampton:T1",
+  "type": "GtfsStop",
+  "code": "Southampton T1",
+  "name": "Southampton T1",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -1.405212,
+      50.896161
+    ]
+  },
+  "operatedBy": ["urn:ngsi-ld:GtfsAgency:RedFunnelFerries"]
+}
