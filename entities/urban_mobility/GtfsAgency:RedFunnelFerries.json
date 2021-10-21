@@ -1,0 +1,7 @@
+{
+  "id": "urn:ngsi-ld:GtfsAgency:RedFunnelFerries",
+  "type": "GtfsAgency",
+  "agencyName": "Red Funnel Ferries",
+  "source": "https://www.redfunnel.co.uk/en/isle-of-wight-ferry/service-status/",
+  "timezone": "Europe/London"
+}
