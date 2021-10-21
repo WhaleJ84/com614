@@ -12,3 +12,5 @@ This repository holds the collaborative group work for COM614 Cloud Computing an
 
 ### Fiware
 
+To run the instance, inside the fiware directory simply run `./services.sh start`.
+This will spin up the docker containers and import all the data automatically.
