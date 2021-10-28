@@ -230,4 +230,31 @@ curl -s -o /dev/null -X POST \
     "headSign": "Southampton T1"
   }'
 
+#
+# Create a subscription to the server.
+# Will receive notifications on remainingTime changes
+#
+curl -s -o /dev/null -X POST \
+  'http://orion:1026/v2/subscriptions/' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "description": "Notify me of all delayed ferries to Terminal 1",
+    "subject": {
+      "entities": [
+        {
+          "idPattern": "urn:ngsi-ld:ArrivalEstimation:Southampton:T1:.*",
+          "type": "ArrivalEstimation"
+        }
+      ],
+       "condition": {
+        "attrs": [ "remainingTime" ]
+      }
+    },
+    "notification": {
+      "http": {
+        "url": "http://subscriber:5000/subscription/ferry-delay"
+      }
+    }
+  }'
+
 echo -e " \033[1;32mdone\033[0m"
