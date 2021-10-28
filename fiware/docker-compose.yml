@@ -34,6 +34,17 @@ services:
       test: curl --fail -s http://orion:1026/version || exit 1
       interval: 5s
 
+  subscriber:
+    image: whalej84/fiware-subscriber
+    hostname: subscriber
+    container_name: subscriber
+    depends_on:
+      - orion
+    networks:
+      - default
+    ports:
+      - "5000:5000"
+
   # Databases
   mongo-db:
     image: mongo:4.4
