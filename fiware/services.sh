@@ -14,7 +14,7 @@ if (( $# < 1 )); then	echo "Illegal number of parameters"
 fi
 
 loadData () {
-	docker run --rm -v $(pwd)/import-data.sh:/import-data \
+	docker run --rm -v "$(pwd)"/import-data.sh:/import-data \
 		--network fiware_default \
 		--entrypoint /bin/ash curlimages/curl import-data
 	echo ""
