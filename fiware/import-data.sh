@@ -131,4 +131,103 @@ curl -s -o /dev/null -X POST \
     }
   }'
 
+#
+# Create the Red Funnel agency.
+# Is the overarching owner of the lower entities.
+#
+curl -s -o /dev/null -X POST \
+  'http://orion:1026/v2/entities?options=keyValues' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": "urn:ngsi-ld:GtfsAgency:RedFunnelFerries",
+    "type": "GtfsAgency",
+    "agencyName": "Red Funnel Ferries",
+    "source": "https://www.redfunnel.co.uk/en/isle-of-wight-ferry/service-status/",
+    "timezone": "Europe/London"
+  }'
+
+#
+# Create the service Red Funnel agency provides.
+# Contains sub-values for what the service offers.
+#
+curl -s -o /dev/null -X POST \
+  'http://orion:1026/v2/entities?options=keyValues' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": "urn:ngsi-ld:Service:Southampton:RedFunnel",
+    "type": "GtfsService",
+    "name": "Red Funnel",
+    "operatedBy": "urn:ngsi-ld:GtfsAgency:RedFunnelFerries"
+  }'
+
+#
+# Create the route between Southampton and IOW.
+# There is no individual ferry tied to this route.
+#
+curl -s -o /dev/null -X POST \
+  'http://orion:1026/v2/entities?options=keyValues' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": "urn:ngsi-ld:GtfsRoute:Southampton:IOW:T1",
+    "type": "GtfsRoute",
+    "name": "Isle of Wight Ferry",
+    "routeType": "4",
+    "operatedBy": "urn:ngsi-ld:GtfsAgency:RedFunnelFerries"
+  }'
+
+#
+# Create the stop at Southampton Terminal 1.
+# Is linked to the Red Funnel agency.
+#
+curl -s -o /dev/null -X POST \
+  'http://orion:1026/v2/entities?options=keyValues' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": "urn:ngsi-ld:GtfsStop:Southampton:T1",
+    "type": "GtfsStop",
+    "code": "Southampton T1",
+    "name": "Southampton T1",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -1.405212,
+        50.896161
+      ]
+    },
+    "operatedBy": ["urn:ngsi-ld:GtfsAgency:RedFunnelFerries"]
+  }'
+
+#
+# Create the 17:30 trip on the Southampton<>IOW route.
+# Is linked with the ferry.
+#
+curl -s -o /dev/null -X POST \
+  'http://orion:1026/v2/entities?options=keyValues' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": "urn:ngsi-ld:GtfsTrip:Southampton:RedFunnel:1730",
+    "type": "GtfsTrip",
+    "hasService": "urn:ngsi-ld:Service:Southampton:RedFunnel",
+    "headSign": "Southampton T1",
+    "direction": 1,
+    "hasRoute": "urn:ngsi-ld:GtfsRoute:Southampton:IOW:T1"
+  }'
+
+#
+# Create an arrival estimation.
+# Is linked with the trip, not a ferry.
+#
+curl -s -o /dev/null -X POST \
+  'http://orion:1026/v2/entities?options=keyValues' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": "urn:ngsi-ld:ArrivalEstimation:Southampton:T1:1730",
+    "type": "ArrivalEstimation",
+    "hasStop": ["urn:ngsi-ld:GtfsStop:Southampton:T1"],
+    "hasTrip": "urn:ngsi-ld:GtfsTrip:Southampton:RedFunnel:1730",
+    "remainingTime": "PT8M5S",
+    "remainingDistance": 1200,
+    "headSign": "Southampton T1"
+  }'
+
 echo -e " \033[1;32mdone\033[0m"
