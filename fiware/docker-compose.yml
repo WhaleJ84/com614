@@ -35,7 +35,8 @@ services:
       interval: 5s
 
   subscriber:
-    image: whalej84/fiware-subscriber
+    build:
+      context: .
     hostname: subscriber
     container_name: subscriber
     depends_on:
