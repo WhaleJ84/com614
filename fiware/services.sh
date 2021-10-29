@@ -15,6 +15,7 @@ fi
 
 loadData () {
 	docker run --rm -v "$(pwd)"/import-data.sh:/import-data \
+	  -v "$(pwd)"/../entities/:/entities/ \
 		--network fiware_default \
 		--entrypoint /bin/ash curlimages/curl import-data
 	echo ""
