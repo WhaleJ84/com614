@@ -3,7 +3,7 @@
   "type": "ArrivalEstimation",
   "hasStop": ["urn:ngsi-ld:GtfsStop:Southampton:T1"],
   "hasTrip": "urn:ngsi-ld:GtfsTrip:Southampton:RedFunnel:1730",
-  "remainingTime": "PT8M5S",
+  "remainingTime": "PT27M28S",
   "remainingDistance": 1200,
   "headSign": "Southampton T1"
 }
