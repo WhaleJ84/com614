@@ -25,3 +25,7 @@ However, should the journey take the full 60 minutes or more, passengers will mi
 
 This prototype will utilise FIWARE and relevant standards to build a system where should the ferry be expected to miss arrival for the bus, an update will be sent to a subscriber.
 With this subscription sent, it could be expanded to notify taxi services to be on standby, for example.
+
+### Demo
+
+![Demonstrating FIWARE PoC](media/fiware_poc_demo.mov)
