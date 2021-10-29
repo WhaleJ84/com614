@@ -28,4 +28,4 @@ With this subscription sent, it could be expanded to notify taxi services to be 
 
 ### Demo
 
-![Demonstrating FIWARE PoC](media/fiware_poc_demo.mov)
+![Demonstrating FIWARE PoC](media/fiware_poc_demo.gif)
