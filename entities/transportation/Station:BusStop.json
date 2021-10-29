@@ -1,6 +1,6 @@
 {
   "id": "urn:ngsi-ld:Station:BusStop:sohawtm",
-  "name": "Red Funnel Terminal (Stop TB)",
+  "name": "Red Funnel Terminal",
   "type": "TransportStation",
   "location": {
     "type": "Point",
