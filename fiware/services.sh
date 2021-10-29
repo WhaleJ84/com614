@@ -1,8 +1,8 @@
 #!/bin/bash
 #
-#  Command Line Interface to start all services associated with the Getting-Started Tutorial
+#  DISCLAIMER: This script has been modified from the FIWARE tutorial series
+#  Please see here: https://github.com/FIWARE/tutorials.NGSI-v2/tree/97fc7d24922ffa0c8b12bb3a9cb69d011fe7c6cc
 #
-#  For this tutorial the commands are merely a convenience script to run ${dockerCmd}#
 
 set -e
 
@@ -68,7 +68,6 @@ case "${command}" in
 		echo "usage: services [create|start|stop]"
 		;;
 	"start")
-#		export $(cat .env | grep "#" -v)
 		stoppingContainers
 		echo -e "Starting containers:  \033[1;34mOrion\033[0m and a \033[1mMongoDB\033[0m database."
 		echo -e "- \033[1;34mOrion\033[0m is the context broker"
@@ -79,13 +78,12 @@ case "${command}" in
 		waitForOrion
 		loadData
 		displayServices
+		echo -e "Now open \033[4mhttp://localhost:5000/schedule"
 		;;
 	"stop")
-#		export $(cat .env | grep "#" -v)
 		stoppingContainers
 		;;
 	"create")
-#		export $(cat .env | grep "#" -v)
 		echo "Pulling Docker images"
 		docker pull curlimages/curl
 		${dockerCmd} pull
