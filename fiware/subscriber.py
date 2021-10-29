@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, time, timedelta
 from re import search
 
 from flask import Flask, request, Response
@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.logger.setLevel("DEBUG")
 
 app.current_time = datetime(2021, 10, 21, 16, 48, 32)
-app._arrival_minutes = 30
+app._arrival_minutes = 27
 app._arrival_seconds = 28
 
 
@@ -26,9 +26,16 @@ def schedule():
         minutes=app._arrival_minutes,
         seconds=app._arrival_seconds
     )
+    if arrival_time.time() <= time(17, 20):
+        return Response(f"""
+<p>Current Time: {app.current_time.time().isoformat()}</p><br/>
+<p>Estimated arrival Time: {arrival_time.time().isoformat()}</p><br/>
+<p>A bus is scheduled to stop outside the terminal shortly after your arrival.</p>
+""")
     return Response(f"""
 <p>Current Time: {app.current_time.time().isoformat()}</p><br/>
-<p>Arrival Time: {arrival_time.time().isoformat()}</p><br/>
+<p>Estimated arrival Time: {arrival_time.time().isoformat()}</p><br/>
+<p>Nearby taxi services have been notified of the delay and should be on standby.</p>
 """)
 
 
